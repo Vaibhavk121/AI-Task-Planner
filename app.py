@@ -5,7 +5,7 @@ import os
 app = Flask(__name__)
 
 # Set your Gemini API key from environment variable
-api_key = os.environ.get("GEMINI_API_KEY", "AIzaSyBF8H5jFOiRHAtrkvJkx2YPRj3dx_viTBM")  # Fallback for development only
+api_key = os.environ.get("GEMINI_API_KEY")  # Fallback for development only
 genai.configure(api_key=api_key)
 
 # Load model
