@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Smart Task Sorter</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    
+</head>
+<body>
+    <div class="container">
+        <h1>AI Task Planner</h1>
+        <textarea id="tasks" placeholder="Enter your tasks here, one per line..."></textarea>
+        <button onclick="sendTasks()">Generate Plan</button>
+        
+        <div class="result-container">
+            <h3>Smart Plan</h3>
+            <pre id="result"></pre>
+        </div>
+    </div>
+
+    <script>
+        async function sendTasks() {
+            const button = document.querySelector('button');
+            const result = document.getElementById('result');
+            
+            try {
+                button.disabled = true;
+                button.textContent = 'Generating...';
+                result.textContent = 'Planning your tasks...';
+                
+                const tasks = document.getElementById("tasks").value;
+                const res = await fetch("/agent", {
+                    method: "POST",
+                    headers: {"Content-Type": "application/json"},
+                    body: JSON.stringify({ tasks: tasks })
+                });
+
+                const data = await res.json();
+                if (data.error) {
+                    result.textContent = `Error: ${data.error}`;
+                } else {
+                    result.textContent = data.plan;
+                }
+            } catch (error) {
+                result.textContent = 'An error occurred while generating the plan.';
+            } finally {
+                button.disabled = false;
+                button.textContent = 'Generate Plan';
+            }
+        }
+    </script>
+</body>
+</html>
