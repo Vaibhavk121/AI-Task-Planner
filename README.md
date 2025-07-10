@@ -19,7 +19,7 @@
 
 ## 🛠️ Tech Stack
 
-<p>
+<p align="center">
   <img src="https://skillicons.dev/icons?i=python,flask,html,css,googlecloud" height="32" />
 </p>
 
@@ -60,10 +60,10 @@ AI-Task-Planner/
    ```
 
 3. **Set up your environment:**
-   - Create a `.env` file in the root directory:
-     ```
-     GEMINI_API_KEY=your-gemini-api-key-here
-     ```
+- Create a `.env` file in the root directory:
+  ```
+  GEMINI_API_KEY=your-gemini-api-key-here
+  ```
 
 4. **Run the app:**
    ```sh
@@ -103,6 +103,5 @@ Suggested Order: 1, 2, 3
 
 
 <p align="center">
-  
-  <b>Made with ❤️ by Vaibhav</b>
+   <b>Made with ❤️ by Vaibhav</b>
   </p>
