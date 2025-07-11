@@ -20,7 +20,7 @@
 ## 🛠️ Tech Stack
 
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=python,flask,html,css,googlecloud" height="32" />
+  <img src="https://skillicons.dev/icons?i=python,flask,html,css,googlecloud"  />
 </p>
 
 - **Backend:** Python, Flask, Google Gemini API  
